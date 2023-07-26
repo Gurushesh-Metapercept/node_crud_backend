@@ -96,6 +96,7 @@ app.delete("/note/:id", async (req, res) => {
 });
 
 //connect to db
+const port = process.env.PORT || 3000;
 mongoose
   .connect(
     "mongodb+srv://admin:5eS9aqHmJJtD18SI@cluster0.iajm9yq.mongodb.net/?retryWrites=true&w=majority",
@@ -107,7 +108,7 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
 
-    app.listen(3000, () => console.log("listening to port 3000"));
+    app.listen(port, () => console.log("listening to port 3000"));
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
