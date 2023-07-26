@@ -14,7 +14,12 @@ app.use(
 
 // dotenv.config();
 
-//Routes
+//Routes.
+app.get("/", (req, res) => {
+  res.send({
+    message: "Welcome to note API",
+  });
+});
 
 // Add Product
 app.post("/note", async (req, res) => {
